@@ -7,6 +7,7 @@ Plugin 'dracula/vim'
 Plugin 'endwise.vim'
 Plugin 'ack.vim'
 Plugin 'ctrlp.vim'
+Plugin 'BlakeWilliams/vim-pry'
  
 call vundle#end()
  
