@@ -36,3 +36,4 @@ set ts=2 sts=2 sw=2 expandtab
   
   
 nmap <leader>t :!bundle exec rspec %<cr>
+nmap <leader>d :call pry#insert()<cr>
