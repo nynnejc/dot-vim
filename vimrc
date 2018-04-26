@@ -7,7 +7,10 @@ Plugin 'dracula/vim'
 Plugin 'endwise.vim'
 Plugin 'ack.vim'
 Plugin 'ctrlp.vim'
-Plugin 'BlakeWilliams/vim-pry'
+
+" Snippets
+Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
  
 call vundle#end()
  
@@ -37,4 +40,3 @@ set ts=2 sts=2 sw=2 expandtab
   
   
 nmap <leader>t :!bundle exec rspec %<cr>
-nmap <leader>d :call pry#insert()<cr>
