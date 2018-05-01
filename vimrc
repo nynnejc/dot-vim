@@ -7,10 +7,6 @@ Plugin 'dracula/vim'
 Plugin 'endwise.vim'
 Plugin 'ack.vim'
 Plugin 'ctrlp.vim'
-
-" Snippets
-Plugin 'SirVer/ultisnips'
-Plugin 'honza/vim-snippets'
  
 call vundle#end()
  
@@ -38,5 +34,8 @@ set noswapfile
 " http://vimcasts.org/episodes/tabs-and-spaces/
 set ts=2 sts=2 sw=2 expandtab
   
-  
-nmap <leader>t :!bundle exec rspec %<cr>
+"\d pry
+nmap <Leader>d orequire 'pry'<cr>binding.pry<esc>:w<cr>
+
+"\t save and run current test
+nmap <leader>t :w<cr>:!bundle exec rspec<cr>
