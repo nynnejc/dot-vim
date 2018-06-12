@@ -22,18 +22,15 @@ call vundle#end()
 color dracula
   
 set t_Co=256
-" set background=light
+set background=dark
   
 filetype plugin indent on
   
 syntax on
   
 set number
-  
 set ruler
- 
 set nowrap
-  
 set hlsearch
 set incsearch
 set noswapfile
