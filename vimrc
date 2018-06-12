@@ -1,4 +1,4 @@
-set nocompatible              " be iMproved, required
+  set nocompatible              " be iMproved, required
 filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
@@ -7,8 +7,8 @@ call vundle#begin()
 
 " for the editor itself
 Plugin 'gmarik/Vundle.vim'
-Plugin 'Solarized'
-Plugin 'Pink'
+" Plugin 'Solarized'
+" Plugin 'Pink'
 Plugin 'scrooloose/nerdtree'
 Plugin 'dracula/vim'
 Plugin 'endwise.vim'
@@ -16,12 +16,19 @@ Plugin 'ack.vim'
 Plugin 'ctrlp.vim'
  
 call vundle#end()
- 
+
+" fix broken dracula :(
+let g:dracula_italic = 0
+set termguicolors
+let g:dracula_colorterm = 0
+highlight Normal ctermbg=None
+color dracula
+
 " colorscheme solarized
 " colorscheme pink
-color dracula
+" color dracula
   
-set t_Co=256
+" set t_Co=256
 set background=dark
   
 filetype plugin indent on
@@ -43,3 +50,6 @@ nmap <Leader>d orequire 'pry'<cr>binding.pry<esc>:w<cr>
 
 "\t save and run current test
 nmap <leader>t :w<cr>:!bundle exec rspec<cr>
+
+"\w save
+nmap <Leader>w :w<cr>
