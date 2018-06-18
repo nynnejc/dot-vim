@@ -42,6 +42,7 @@ set nowrap
 set hlsearch
 set incsearch
 set noswapfile
+set noshowmatch
   
 " http://vimcasts.org/episodes/tabs-and-spaces/
 set ts=2 sts=2 sw=2 expandtab
