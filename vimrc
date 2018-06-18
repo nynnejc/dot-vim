@@ -14,6 +14,7 @@ Plugin 'dracula/vim'
 Plugin 'endwise.vim'
 Plugin 'ack.vim'
 Plugin 'ctrlp.vim'
+Plugin 'tpope/vim-commentary'
  
 call vundle#end()
 
