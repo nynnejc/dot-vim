@@ -42,8 +42,14 @@ set nowrap
 set hlsearch
 set incsearch
 set noswapfile
-set noshowmatch
-  
+set colorcolumn=80
+
+" disable auto highlighting of Matched Parentheses
+let g:loaded_matchparen=1
+
+" Silver Search
+let g:ackprg = 'ag --vimgrep'
+
 " http://vimcasts.org/episodes/tabs-and-spaces/
 set ts=2 sts=2 sw=2 expandtab
   
