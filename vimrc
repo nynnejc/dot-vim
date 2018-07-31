@@ -13,6 +13,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'dracula/vim'
 Plugin 'endwise.vim'
 Plugin 'ack.vim'
+Plugin 'rking/ag.vim'
 Plugin 'ctrlp.vim'
 Plugin 'tpope/vim-commentary'
  
