@@ -16,6 +16,7 @@ Plugin 'ack.vim'
 Plugin 'rking/ag.vim'
 Plugin 'ctrlp.vim'
 Plugin 'tpope/vim-commentary'
+Plugin 'airblade/vim-gitgutter'
  
 call vundle#end()
 
