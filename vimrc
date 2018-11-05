@@ -1,4 +1,4 @@
-set nocompatible              " be iMproved, required
+  set nocompatible              " be iMproved, required
 filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
@@ -17,8 +17,11 @@ Plugin 'rking/ag.vim'
 Plugin 'ctrlp.vim'
 Plugin 'tpope/vim-commentary'
 Plugin 'airblade/vim-gitgutter'
+Plugin 'tidalcycles/vim-tidal'
  
 call vundle#end()
+
+execute pathogen#infect()
 
 " fix broken dracula :(
 let g:dracula_italic = 0
@@ -29,10 +32,32 @@ color dracula
 
 " colorscheme solarized
 " colorscheme pink
-" color dracula
   
 " set t_Co=256
 set background=dark
+
+  " VIM ESSENTIALS SuperCollider speciffics
+
+    " Set <leader> to be ,
+    let mapleader = ","
+
+    " Set <localleader> to be .
+    let maplocalleader="."
+
+    " open .vimrc in a new tab by pressing <leader>av
+    nnoremap <leader>av :tabnew $MYVIMRC<CR>
+
+    " Reload vimrc by pressing <leader>rv
+    nnoremap <leader>rv :source $MYVIMRC<CR>
+
+  " SC SPECIFIC
+    " Find arguments of a class by pressing the semi colon key
+    au Filetype supercollider nnoremap ; :call SCfindArgs()<CR>
+
+    " Activate flashing when a piece of code is evaluated
+    let g:scFlash = 1
+
+  "SuperCollider speciffics
   
 filetype plugin indent on
   
