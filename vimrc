@@ -1,4 +1,4 @@
-  set nocompatible              " be iMproved, required
+set nocompatible              " be iMproved, required
 filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
@@ -20,8 +20,6 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'tidalcycles/vim-tidal'
  
 call vundle#end()
-
-execute pathogen#infect()
 
 " fix broken dracula :(
 let g:dracula_italic = 0
