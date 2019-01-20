@@ -55,6 +55,16 @@ set background=dark
     " Activate flashing when a piece of code is evaluated
     let g:scFlash = 1
 
+    "To fix f5, f6, f12 keys
+    au Filetype supercollider nnoremap <buffer> <leader>a :call SClang_block()<CR>
+    au Filetype supercollider inoremap <buffer> <leader>a :call SClang_block()<CR>a
+    au Filetype supercollider vnoremap <buffer> <leader>a :call SClang_line()<CR>
+
+    au Filetype supercollider vnoremap <buffer> <leader>b :call SClang_line()<CR>
+    au Filetype supercollider nnoremap <buffer> <leader>b :call SClang_line()<CR>
+    au Filetype supercollider inoremap <buffer> <leader>b :call SClang_line()<CR>a
+
+    au Filetype supercollider nnoremap <buffer> <leader>. :call SClangHardstop()<CR>
   "SuperCollider speciffics
   
 filetype plugin indent on
