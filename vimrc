@@ -9,15 +9,15 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 " Plugin 'Solarized'
 " Plugin 'Pink'
-Plugin 'scrooloose/nerdtree'
-Plugin 'dracula/vim'
-Plugin 'endwise.vim'
-Plugin 'ack.vim'
-Plugin 'rking/ag.vim'
-Plugin 'ctrlp.vim'
-Plugin 'tpope/vim-commentary'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'tidalcycles/vim-tidal'
+ Plugin 'scrooloose/nerdtree'
+ Plugin 'dracula/vim'
+ Plugin 'endwise.vim'
+ Plugin 'ack.vim'
+ Plugin 'rking/ag.vim'
+ Plugin 'ctrlp.vim'
+ Plugin 'tpope/vim-commentary'
+ Plugin 'airblade/vim-gitgutter'
+ Plugin 'tidalcycles/vim-tidal'
  
 call vundle#end()
 
@@ -35,9 +35,6 @@ color dracula
 set background=dark
 
   " VIM ESSENTIALS SuperCollider speciffics
-
-    " Set <leader> to be ,
-    let mapleader = ","
 
     " Set <localleader> to be .
     let maplocalleader="."
@@ -75,6 +72,21 @@ let g:loaded_matchparen=1
 
 " Silver Search
 let g:ackprg = 'ag --vimgrep'
+
+" The Silver Searcher
+if executable('ag')
+  " Use ag over grep
+  set grepprg=ag\ --nogroup\ --nocolor
+
+  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+
+  " ag is fast enough that CtrlP doesn't need to cache
+  let g:ctrlp_use_caching = 0
+endif
+
+" bind K to grep word under cursor
+nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 
 " http://vimcasts.org/episodes/tabs-and-spaces/
 set ts=2 sts=2 sw=2 expandtab
