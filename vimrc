@@ -18,6 +18,8 @@ Plugin 'gmarik/Vundle.vim'
  Plugin 'tpope/vim-commentary'
  Plugin 'airblade/vim-gitgutter'
  Plugin 'tidalcycles/vim-tidal'
+ Plug 'neoclide/coc.nvim', {'tag': '*', 'do': './install.sh'}
+
  
 call vundle#end()
 
