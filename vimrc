@@ -1,28 +1,25 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+call plug#begin('~/.vim/plugged')
 
-" for the editor itself
-Plugin 'gmarik/Vundle.vim'
 " Plugin 'Solarized'
 " Plugin 'Pink'
- Plugin 'scrooloose/nerdtree'
- Plugin 'dracula/vim'
- Plugin 'endwise.vim'
- Plugin 'ack.vim'
- Plugin 'rking/ag.vim'
- Plugin 'ctrlp.vim'
- Plugin 'tpope/vim-commentary'
- Plugin 'airblade/vim-gitgutter'
- Plugin 'tidalcycles/vim-tidal'
- Plug 'neoclide/coc.nvim', {'tag': '*', 'do': './install.sh'}
+ Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+ Plug 'dracula/vim', { 'as': 'dracula' }
+ Plug 'tpope/vim-commentary'
+ Plug 'tpope/vim-endwise' 
+ " Plugin 'ack.vim'
+ " Plugin 'rking/ag.vim'
+ " Plugin 'ctrlp.vim'
+ " Plugin 'airblade/vim-gitgutter'
+ " Plugin 'tidalcycles/vim-tidal'
 
+call plug#end()
+
+" coc
+ Plug 'neoclide/coc.nvim', {'branch': 'release'}
  
-call vundle#end()
-
 " fix broken dracula :(
 let g:dracula_italic = 0
 set termguicolors
