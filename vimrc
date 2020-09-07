@@ -1,71 +1,36 @@
-set nocompatible              " be iMproved, required
-filetype off                  " required
+""" Vundle """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+filetype off
 
-call plug#begin('~/.vim/plugged')
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
+" for the editor itself
+Plugin 'gmarik/Vundle.vim'
 " Plugin 'Solarized'
-" Plugin 'Pink'
- Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
- Plug 'dracula/vim', { 'as': 'dracula' }
- Plug 'tpope/vim-commentary'
- Plug 'tpope/vim-endwise' 
- " Plugin 'ack.vim'
- " Plugin 'rking/ag.vim'
- " Plugin 'ctrlp.vim'
- " Plugin 'airblade/vim-gitgutter'
- " Plugin 'tidalcycles/vim-tidal'
+Plugin 'calmar256-lightdark.vim'
+Plugin 'ctrlp.vim'
+Plugin 'ack.vim'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'tpope/vim-dispatch'
 
-call plug#end()
+" for general text editing
+Plugin 'tComment'
+Plugin 'endwise.vim'
+Plugin 'surround.vim'
+Plugin 'abolish.vim'
 
-" coc
- Plug 'neoclide/coc.nvim', {'branch': 'release'}
- 
-" fix broken dracula :(
-let g:dracula_italic = 0
-set termguicolors
-let g:dracula_colorterm = 0
-highlight Normal ctermbg=None
-color dracula
-
-" colorscheme solarized
-" colorscheme pink
-  
-" set t_Co=256
-set background=dark
-
-  " VIM ESSENTIALS SuperCollider speciffics
-
-    " Set <localleader> to be .
-    let maplocalleader="."
-
-    " open .vimrc in a new tab by pressing <leader>av
-    nnoremap <leader>av :tabnew $MYVIMRC<CR>
-
-    " Reload vimrc by pressing <leader>rv
-    nnoremap <leader>rv :source $MYVIMRC<CR>
-
-  " SC SPECIFIC
-    " Find arguments of a class by pressing the semi colon key
-    au Filetype supercollider nnoremap ; :call SCfindArgs()<CR>
-
-    " Activate flashing when a piece of code is evaluated
-    let g:scFlash = 1
-
-    "To fix f5, f6, f12 keys
-    au Filetype supercollider nnoremap <buffer> <leader>a :call SClang_block()<CR>
-    au Filetype supercollider inoremap <buffer> <leader>a :call SClang_block()<CR>a
-    au Filetype supercollider vnoremap <buffer> <leader>a :call SClang_line()<CR>
-
-    au Filetype supercollider vnoremap <buffer> <leader>b :call SClang_line()<CR>
-    au Filetype supercollider nnoremap <buffer> <leader>b :call SClang_line()<CR>
-    au Filetype supercollider inoremap <buffer> <leader>b :call SClang_line()<CR>a
-
-    au Filetype supercollider nnoremap <buffer> <leader>. :call SClangHardstop()<CR>
-  "SuperCollider speciffics
-  
+call vundle#end()
 filetype plugin indent on
   
 syntax on
+
+" Allow backspacing over autoindent, eol and start of lines
+set backspace=indent,eol,start
+
+set t_Co=256                        " force vim to use 256 colors
+colorscheme calmar256-light
+set background=light
 
 set noshowmatch
 set number
