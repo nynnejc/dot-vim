@@ -1,36 +1,36 @@
-""" Vundle """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-filetype off
+set nocompatible              " be iMproved, required
+filetype off                  " required
 
+" set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 " for the editor itself
 Plugin 'gmarik/Vundle.vim'
 " Plugin 'Solarized'
-Plugin 'calmar256-lightdark.vim'
-Plugin 'ctrlp.vim'
-Plugin 'ack.vim'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'tpope/vim-dispatch'
-
-" for general text editing
-Plugin 'tComment'
-Plugin 'endwise.vim'
-Plugin 'surround.vim'
-Plugin 'abolish.vim'
-
+" Plugin 'Pink'
+ Plugin 'scrooloose/nerdtree'
+ Plugin 'dracula/vim', { 'name': 'dracula' } 
+ Plugin 'endwise.vim'
+ Plugin 'ack.vim'
+ Plugin 'rking/ag.vim'
+ Plugin 'ctrlp.vim'
+ Plugin 'tpope/vim-commentary'
+ Plugin 'airblade/vim-gitgutter'
 call vundle#end()
+
+
+syntax on
+colorscheme dracula
+let g:dracula_italic = 0
+let g:dracula_colorterm = 0
+highlight Normal ctermbg=None
+
+set background=dark
+
 filetype plugin indent on
   
 syntax on
-
-" Allow backspacing over autoindent, eol and start of lines
-set backspace=indent,eol,start
-
-set t_Co=256                        " force vim to use 256 colors
-colorscheme calmar256-light
-set background=light
 
 set noshowmatch
 set number
